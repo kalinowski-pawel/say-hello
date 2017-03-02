@@ -1,0 +1,32 @@
+{
+  "name": "say-hello",
+  "version": "1.0.0",
+  "description": "say hello 2u - application",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pablo83/say-hello.git"
+  },
+  "author": "Pawel Kalinowski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pablo83/say-hello/issues"
+  },
+  "homepage": "https://github.com/pablo83/say-hello#readme",
+  "dependencies": {
+    "@types/react": "^15.0.14",
+    "@types/react-dom": "^0.14.23",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-env": "^1.1.11",
+    "source-map-loader": "^0.1.6",
+    "typescript": "^2.2.1"
+  }
+}
