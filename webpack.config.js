@@ -2,13 +2,15 @@ var path = require("path");
 var webpack = require("webpack");
 
 module.exports = {
-    entry: "./src/index.tsx",
+    context: __dirname + "/",
+    entry: {
+        app: ["./src/index.tsx"]
+    },
     output: {
         filename: "bundle.js",
-        path: __dirname + "/dist"
+        path: path.resolve(__dirname + "build")
     },
     devtool: "source-map",
-
     resolve: {
         extensions: [
             ".webpack.js",
