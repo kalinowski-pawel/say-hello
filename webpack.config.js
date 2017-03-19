@@ -8,7 +8,7 @@ module.exports = {
     },
     output: {
         filename: "bundle.js",
-        path: path.resolve(__dirname + "build")
+        path: path.resolve(__dirname, "./dist")
     },
     devtool: "source-map",
     resolve: {
@@ -23,27 +23,41 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.tsx?$/,
+                test: /\.ts(x)?$/,
                 exclude: /node_modules/,
-                loader: "babel-loader"
+                use: [
+                    {
+                        loader: "babel-loader"
+                    },
+                    {
+                        loader: "ts-loader"
+                    }
+                ]
             },
 
             {
                 test: /\.js$/,
                 enforce: "pre",
-                loader: "source-map-loader"
+                use: [
+                    {
+                        loader: "babel-loader"
+                    }
+                ]
             }
         ]
     },
 
-    externals: {
-        "react": "React",
-        "react-dom": "ReactDOM"
-    },
-
     plugins: [
+        new webpack.ProvidePlugin({
+            "React": "react"
+        }),
         new webpack.LoaderOptionsPlugin({
             minimize: true
         })
-    ]
+    ],
+    devServer: {
+        inline: true,
+        host: "localhost",
+        port: 8082
+    }
 };
