@@ -1,9 +1,13 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { Hello } from "./components/Hello";
+export interface HelloProps {
+    compiler: string;
+}
+
+export const Hello = (props: HelloProps) => <h1>Testowa integracja: {props.compiler}</h1>
 
 ReactDOM.render(
-    <Hello compiler="hello!"/>,
+    <Hello compiler="Webgazer!"/>,
     document.getElementById("app")
 );
