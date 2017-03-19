@@ -4,7 +4,7 @@
   "description": "say hello 2u - application",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack-dev-server --inline"
+    "start": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,8 @@
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
     "babel-preset-env": "^1.1.11",
+    "browser-sync": "^2.18.8",
+    "browser-sync-webpack-plugin": "^1.1.4",
     "eslint": "^3.18.0",
     "jest": "^19.0.2",
     "source-map-loader": "^0.1.6",

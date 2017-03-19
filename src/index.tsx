@@ -1,9 +1,9 @@
-import * as React from "@types/react";
+import * as React from "react";
 import * as ReactDOM from "react-dom";
 
 import { Hello } from "./components/Hello";
 
 ReactDOM.render(
-    <Hello compiler="biuro"/>,
+    <Hello compiler="hello!"/>,
     document.getElementById("app")
 );

@@ -1,5 +1,6 @@
 var path = require("path");
 var webpack = require("webpack");
+var BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 
 module.exports = {
     context: __dirname + "/",
@@ -8,7 +9,7 @@ module.exports = {
     },
     output: {
         filename: "bundle.js",
-        path: path.resolve(__dirname, "./dist")
+        path: path.resolve(__dirname, "build")
     },
     devtool: "source-map",
     resolve: {
@@ -48,16 +49,18 @@ module.exports = {
     },
 
     plugins: [
-        new webpack.ProvidePlugin({
-            "React": "react"
-        }),
         new webpack.LoaderOptionsPlugin({
             minimize: true
+        }),
+        new BrowserSyncPlugin({
+            host: 'localhost',
+            port: 8080,
+            server: {
+                baseDir: './'
+            },
+            ui: false,
+            online: false,
+            notify: false
         })
     ],
-    devServer: {
-        inline: true,
-        host: "localhost",
-        port: 8082
-    }
 };
