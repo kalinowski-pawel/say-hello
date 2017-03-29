@@ -31,17 +31,17 @@ module.exports = {
                     "ts-loader"
                 ]
             },
-
             {
                 test: /\.js$/,
                 enforce: "pre",
                 use: [
-                    {
-                        loader: "babel-loader"
-                    }
+                    "babel-loader"
                 ]
-            }
+            },
         ]
+    },
+    externals: {
+        webgazer: webgazer
     },
     plugins: [
         new webpack.LoaderOptionsPlugin({

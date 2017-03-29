@@ -1,14 +1,14 @@
 import * as React from "react";
-export interface ITrackingProps {
 
+declare var webgazer:any;
+
+export interface ITrackingProps {
 }
 
 class Tracking extends React.Component<ITrackingProps, undefined>{
     componentDidMount(){
-          webgazer.setGazeListener(function(data, elapsedTime){
-              console.log('test');
-              console.log(data);
-              console.log(elapsedTime);
+          webgazer.setGazeListener(function(data:string, elapsedTime:string){
+              console.log('inside listener');
           }).begin();
     }
 
