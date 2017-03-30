@@ -40,9 +40,6 @@ module.exports = {
             },
         ]
     },
-    externals: {
-        webgazer: webgazer
-    },
     plugins: [
         new webpack.LoaderOptionsPlugin({
             minimize: true
