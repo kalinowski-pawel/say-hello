@@ -3,6 +3,12 @@ import * as React from "react";
 declare const webgazer: any;
 
 export interface ITrackingProps {
+
+}
+
+interface IData{
+    x:string;
+    y:string;
 }
 
 class Tracking extends React.Component<ITrackingProps, undefined> {
@@ -27,8 +33,8 @@ class Tracking extends React.Component<ITrackingProps, undefined> {
         }, 100)
     }
 
-    onSetCursor(data){
-        const paragraph = document.createElement('p')
+    onSetCursor(data: IData){
+        const paragraph = document.createElement('p');
         paragraph.style.left = `${data.x}px`;
         paragraph.style.top = `${data.y}px`;
         document.appendChild(paragraph);
